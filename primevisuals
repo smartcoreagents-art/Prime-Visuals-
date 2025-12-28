@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Visuals | Digital Dominance</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#030712',
+                        card: '#111827',
+                        primary: '#7c3aed', /* Violet */
+                        accent: '#22d3ee', /* Cyan */
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+
+        /* Reveal on Scroll Class */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Gradient Text */
+        .text-gradient { background: linear-gradient(to right, #22d3ee, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Glass Effect */
+        .glass { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden">
+
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center glass rounded-b-2xl mt-0 md:mt-4 mx-0 md:mx-4">
+            <a href="#" class="text-2xl font-bold tracking-tighter">PRIME<span class="text-accent">VISUALS</span><span class="text-primary">.</span></a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                <a href="#work" class="hover:text-white transition">Work</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#process" class="hover:text-white transition">Process</a>
+            </div>
+
+            <a href="#contact" class="hidden md:block bg-white text-black px-6 py-2.5 rounded-full font-bold hover:bg-accent hover:scale-105 transition transform text-sm">
+                Let's Talk
+            </a>
+
+            <button class="md:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden glass absolute top-20 left-4 right-4 p-6 rounded-2xl flex flex-col gap-4 text-center md:hidden">
+            <a href="#work" class="py-2">Work</a>
+            <a href="#services" class="py-2">Services</a>
+            <a href="#contact" class="bg-primary py-2 rounded-lg">Contact Us</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center pt-20 relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left reveal">
+                <div class="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-accent mb-6">
+                    <i class="fa-solid fa-circle-nodes mr-2"></i> AI-Powered Digital Marketing
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    We Don't Just Post. <br>
+                    <span class="text-gradient">We Dominate.</span>
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-lg mx-auto md:mx-0">
+                    Helping Ahmedabad's businesses crush the competition with data-driven SEO, premium content, and Google Ranking strategies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/80 transition flex items-center justify-center gap-2">
+                        Start Growing <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                    </a>
+                    <a href="#work" class="border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/5 transition">
+                        View Portfolio
+                    </a>
+                </div>
+                <div class="mt-12 flex items-center gap-6 justify-center md:justify-start text-gray-500 grayscale opacity-70">
+                    <i class="fa-brands fa-google text-2xl"></i>
+                    <i class="fa-brands fa-meta text-2xl"></i>
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                    <i class="fa-brands fa-linkedin text-2xl"></i>
+                </div>
+            </div>
+            
+            <div class="relative hidden md:block reveal delay-200">
+                <div class="relative w-full aspect-square animate-float">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-full opacity-20 blur-2xl"></div>
+                    <div class="glass absolute inset-10 rounded-3xl flex items-center justify-center border-t border-l border-white/20 shadow-2xl z-10">
+                        <div class="text-center">
+                            <div class="text-6xl font-bold text-white mb-2">300%</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-widest">Growth Rate</div>
+                        </div>
+                    </div>
+                    <div class="absolute -right-10 top-20 glass p-4 rounded-xl flex items-center gap-3 animate-float animation-delay-2000 z-20">
+                        <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-400"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                        <div>
+                            <div class="text-xs text-gray-400">SEO Ranking</div>
+                            <div class="text-sm font-bold">#1 Position</div>
+                        </div>
+                    </div>
+                    <div class="absolute -left-5 bottom-20 glass p-4 rounded-xl flex items-center gap-3 animate-float animation-delay-4000 z-20">
+                        <div class="w-10 h-10 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-400"><i class="fa-brands fa-instagram"></i></div>
+                        <div>
+                            <div class="text-xs text-gray-400">Viral Reach</div>
+                            <div class="text-sm font-bold">+50k Views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Our <span class="text-gray-500">Expertise</span></h2>
+                <div class="w-20 h-1 bg-accent rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-8 rounded-3xl hover:bg-white/5 transition duration-300 group reveal md:col-span-2">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-white transition -rotate-45"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Social Media Management</h3>
+                    <p class="text-gray-400">We create content that stops the scroll. From Reels to carousels, we handle everything for your brand in Maninagar & beyond.</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover:bg-white/5 transition duration-300 group reveal">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-400 text-2xl group-hover:scale-110 transition">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-white transition -rotate-45"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Google Ranking (SEO)</h3>
+                    <p class="text-gray-400">Get your business found first. We specialize in Local SEO for Ahmedabad businesses.</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover:bg-white/5 transition duration-300 group reveal">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-white transition -rotate-45"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Content Creation</h3>
+                    <p class="text-gray-400">Photography, Videography & Editing. We make your product look premium.</p>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover:bg-white/5 transition duration-300 group reveal md:col-span-2">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-400 text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-white transition -rotate-45"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Web Development</h3>
+                    <p class="text-gray-400">High-performance websites (like this one) that convert visitors into customers. Powered by modern tech.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 border-y border-white/5 bg-black/50">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
+            <div>
+                <div class="text-4xl font-bold text-white mb-2">50+</div>
+                <div class="text-sm text-gray-500 uppercase tracking-widest">Clients</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-white mb-2">10k+</div>
+                <div class="text-sm text-gray-500 uppercase tracking-widest">Leads Generated</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-white mb-2">4.9</div>
+                <div class="text-sm text-gray-500 uppercase tracking-widest">Rating</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-white mb-2">24/7</div>
+                <div class="text-sm text-gray-500 uppercase tracking-widest">Support</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary/5 -z-10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="reveal">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">Ready to <span class="text-gradient">Scale?</span></h2>
+                <p class="text-gray-400 text-xl mb-12">Let's discuss how we can improve your digital presence in Maninagar.</p>
+            </div>
+
+            <div class="glass p-8 md:p-12 rounded-3xl text-left reveal">
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Name</label>
+                            <input type="text" name="name" class="w-full bg-dark border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-accent text-white transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Phone</label>
+                            <input type="tel" name="phone" class="w-full bg-dark border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-accent text-white transition" placeholder="+91 98765...">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">Message</label>
+                        <textarea name="message" rows="4" class="w-full bg-dark border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-accent text-white transition" placeholder="I need help with..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary to-violet-600 text-white font-bold py-4 rounded-xl hover:opacity-90 transition transform hover:scale-[1.01] shadow-lg shadow-purple-900/50">
+                        Send Message
+                    </button>
+                </form>
+
+                <div class="mt-8 text-center">
+                    <p class="text-gray-500 mb-4">Or chat with us directly</p>
+                    <a href="https://wa.me/919876543210" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition font-bold text-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Prime Visuals / Dr. Brand. All rights reserved.</p>
+        <p class="mt-2">Made with <i class="fa-solid fa-bolt text-yellow-500"></i> in Ahmedabad.</p>
+    </footer>
+
+    <script>
+        // Navbar blur effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+            }
+        });
+
+        // Reveal animation on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 150;
+
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Trigger once on load
+        revealOnScroll();
+    </script>
+</body>
+</html>
